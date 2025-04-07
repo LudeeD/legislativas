@@ -2,8 +2,6 @@
 	import type { PageProps } from './$types';
 	import { fade, fly, scale } from 'svelte/transition';
 	import confetti from 'canvas-confetti';
-	import { Tween } from 'svelte/motion';
-	import { linear } from 'svelte/easing';
 
 	let { data }: PageProps = $props();
 
@@ -14,26 +12,9 @@
 	let sordoutor = $derived(data.data[step]);
 	let selectedAnswer = $state('');
 	let explanationRef: HTMLElement | null = $state(null);
-	let autoAdvanceTimer: ReturnType<typeof setTimeout>;
-
-	// Time in milliseconds for auto-advance
-	const autoAdvanceTime = 1000 * 15;
-
-	const progress = new Tween(0, {
-		duration: autoAdvanceTime,
-		easing: linear
-	});
 
 	function incrementStep() {
 		if (selectedAnswer === '') return;
-
-		// Clear any existing timer when manually advancing
-		if (autoAdvanceTimer) {
-			clearTimeout(autoAdvanceTimer);
-		}
-
-		// Reset progress
-		progress.set(0);
 
 		if (step < maxStep) {
 			step += 1;
@@ -51,12 +32,6 @@
 		if ((isDoutor && sordoutor.sordoutor) || (!isDoutor && !sordoutor.sordoutor)) {
 			score += 1;
 		}
-
-		// Start the progress animation
-		progress.set(1);
-
-		// Set a timer to automatically advance after the set time
-		autoAdvanceTimer = setTimeout(incrementStep, autoAdvanceTime);
 
 		// Scroll to explanation after a short delay
 		setTimeout(() => {
@@ -79,13 +54,6 @@
 		score = 0;
 		finished = false;
 		selectedAnswer = '';
-
-		// Reset progress
-		progress.set(0);
-
-		if (autoAdvanceTimer) {
-			clearTimeout(autoAdvanceTimer);
-		}
 	}
 
 	let subtitle = $derived(() => {
@@ -202,14 +170,10 @@
 
 					<div class="mt-4 flex justify-center">
 						<button
-							class="relative overflow-hidden rounded-lg bg-indigo-600 px-6 py-2 text-white shadow-md transition-all hover:bg-indigo-700"
+							class="rounded-lg bg-indigo-600 px-6 py-2 text-white shadow-md transition-all hover:bg-indigo-700"
 							onclick={incrementStep}
 						>
-							<div
-								class="absolute inset-0 left-0 bg-indigo-400 opacity-30"
-								style="width: {progress.current * 100}%"
-							></div>
-							<span class="relative z-10">Próxima Questão 🚀</span>
+							<span>Próxima Questão 🚀</span>
 						</button>
 					</div>
 				</div>
