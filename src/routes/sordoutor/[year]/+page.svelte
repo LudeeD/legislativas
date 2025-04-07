@@ -2,7 +2,7 @@
 	import type { PageProps } from './$types';
 	import { fade, fly, scale } from 'svelte/transition';
 	import confetti from 'canvas-confetti';
-	import { tweened } from 'svelte/motion';
+	import { Tween } from 'svelte/motion';
 	import { linear } from 'svelte/easing';
 
 	let { data }: PageProps = $props();
@@ -13,14 +13,13 @@
 	let score = $state(0);
 	let sordoutor = $derived(data.data[step]);
 	let selectedAnswer = $state('');
-	let explanationRef: HTMLElement;
+	let explanationRef: HTMLElement | null = $state(null);
 	let autoAdvanceTimer: ReturnType<typeof setTimeout>;
 
 	// Time in milliseconds for auto-advance
-	const autoAdvanceTime = 4000;
+	const autoAdvanceTime = 1000 * 15;
 
-	// Create a tweened progress value for the button fill
-	const progress = tweened(0, {
+	const progress = new Tween(0, {
 		duration: autoAdvanceTime,
 		easing: linear
 	});
@@ -98,7 +97,7 @@
 	});
 </script>
 
-<div class="min-h-screen bg-gradient-to-b from-indigo-50 to-blue-100 px-4 py-12">
+<div class="min-h-screen bg-gradient-to-b from-indigo-50 to-blue-100 p-4">
 	<div
 		class="mx-auto flex max-w-2xl flex-col items-center justify-center rounded-2xl bg-white p-8 shadow-lg"
 	>
@@ -108,7 +107,7 @@
 					<span class="font-medium">Questão {step + 1}/{maxStep + 1}</span>
 				</div>
 				<div class="rounded-full bg-blue-100 px-4 py-2">
-					<span class="font-medium">Pontuação: {score}</span>
+					<span class="font-medium">✨ Pontos: {score}</span>
 				</div>
 			</div>
 
@@ -137,7 +136,11 @@
 					onclick={() => checkAnswer(true)}
 					disabled={selectedAnswer !== ''}
 				>
-					Sôr Doutor
+					{#if sordoutor.sexo === 'masculino'}
+						🤓 Sôr Doutor
+					{:else}
+						🤓 Sôr Doutora
+					{/if}
 				</button>
 				<button
 					class="w-full rounded-lg bg-gray-700 px-6 py-3 text-lg font-semibold text-white shadow-md transition-all hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
@@ -147,15 +150,44 @@
 					onclick={() => checkAnswer(false)}
 					disabled={selectedAnswer !== ''}
 				>
-					Plebeu
+					{#if sordoutor.sexo === 'masculino'}
+						😒 Plebeu
+					{:else}
+						😒 Plebeia
+					{/if}
 				</button>
 			</div>
 
 			{#if selectedAnswer !== ''}
+				<div
+					class="mt-4 rounded-lg border-t-0 border-l-4 bg-gray-50 p-4
+    {sordoutor.sordoutor ? 'border-indigo-500' : 'border-gray-500'}"
+				>
+					<p class="font-medium">
+						{#if sordoutor.sordoutor && selectedAnswer === 'doutor'}
+							✅ <span class="text-indigo-700">Correto:</span>
+							{sordoutor.name}
+							{sordoutor.sexo === 'masculino' ? 'é' : 'é'} efetivamente {sordoutor.sexo ===
+							'masculino'
+								? 'um Sôr Doutor'
+								: 'uma Sôr Doutora'}!
+						{:else if selectedAnswer === 'plebeu' && !sordoutor.sordoutor}
+							✅ <span class="text-indigo-700">Correto:</span>
+							{sordoutor.name} é efetivamente {sordoutor.sexo === 'masculino'
+								? 'um simples plebeu'
+								: 'uma simples plebeia'}!
+						{:else}
+							❌ <span class="text-red-700">Errado:</span>
+							{sordoutor.name} não é
+							{sordoutor.sordoutor ? 'da plebe' : 'dos doutores'}!
+						{/if}
+					</p>
+				</div>
 				<div class="mt-6" in:fly={{ y: 20, duration: 300 }} bind:this={explanationRef}>
 					<div class="rounded-lg border-l-4 border-indigo-500 bg-slate-50 p-4">
 						<p class="mb-2 font-medium">Segundo a Wikipedia:</p>
 						<p class="text-gray-700">
+							<!-- eslint-disable-next-line -->
 							{@html sordoutor.summary}
 						</p>
 						<a
@@ -175,9 +207,9 @@
 						>
 							<div
 								class="absolute inset-0 left-0 bg-indigo-400 opacity-30"
-								style="width: {$progress * 100}%"
+								style="width: {progress.current * 100}%"
 							></div>
-							<span class="relative z-10">Próxima Questão</span>
+							<span class="relative z-10">Próxima Questão 🚀</span>
 						</button>
 					</div>
 				</div>
