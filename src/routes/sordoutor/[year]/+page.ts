@@ -175,7 +175,7 @@ export const load: PageLoad = ({ params }) => {
 				img: '/images/ventura.png'
 			}
 		],
-		2024: [
+		2025: [
 			{
 				sexo: 'masculino',
 				name: 'Rui Tavares',
