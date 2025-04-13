@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { fly, scale } from 'svelte/transition';
+	import { fade, fly, scale } from 'svelte/transition';
 
 	// Available game years
 	const availableYears = [2022, 2024, 2025];
@@ -64,6 +64,14 @@
 				</button>
 			{/each}
 		</div>
+
+		<a
+			href="/"
+			class="mx-auto mt-6 block rounded-lg bg-indigo-600 px-6 py-2 text-white shadow-md transition-colors duration-200 hover:bg-indigo-700"
+			in:fly={{ y: 20, delay: 600, duration: 300 }}
+		>
+			← Voltar à página inicial
+		</a>
 
 		<div class="mt-8 text-center text-sm text-gray-500">
 			<p>
