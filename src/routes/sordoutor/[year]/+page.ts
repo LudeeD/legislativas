@@ -130,15 +130,6 @@ export const load: PageLoad = ({ params }) => {
 			},
 			{
 				sexo: 'feminino',
-				name: 'Pedro Nuno Santos',
-				wikipedia: 'https://pt.wikipedia.org/wiki/Pedro_Nuno_Santos',
-				summary:
-					'do Instituto Superior de Economia e Gestão da Universidade Técnica de Lisboa e Membro da Direção da Associação de Estudantes do mesmo,<u>onde se licenciou em Economia.</u>',
-				sordoutor: false,
-				img: '/images/pedro.png'
-			},
-			{
-				sexo: 'feminino',
 				name: 'Inês Sousa Real',
 				wikipedia: 'https://pt.wikipedia.org/wiki/In%C3%AAs_Sousa_Real#Biografia',
 				summary:
@@ -205,15 +196,6 @@ export const load: PageLoad = ({ params }) => {
 			},
 			{
 				sexo: 'masculino',
-				name: 'Pedro Nuno Santos',
-				wikipedia: 'https://pt.wikipedia.org/wiki/Pedro_Nuno_Santos',
-				summary:
-					'do Instituto Superior de Economia e Gestão da Universidade Técnica de Lisboa e Membro da Direção da Associação de Estudantes do mesmo,<u>onde se licenciou em Economia.</u>',
-				sordoutor: false,
-				img: '/images/pedro.png'
-			},
-			{
-				sexo: 'feminino',
 				name: 'Pedro Nuno Santos',
 				wikipedia: 'https://pt.wikipedia.org/wiki/Pedro_Nuno_Santos',
 				summary:
