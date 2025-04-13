@@ -66,8 +66,12 @@
 		</div>
 
 		<div class="mt-8 text-center text-sm text-gray-500">
-			<p>Um jogo educativo sobre política portuguesa.</p>
-			<p>Desenvolvido com 💙 por <a class="underline" href="https://about.luissilva.eu">mim</a></p>
+			<p>
+				Desenvolvido com 💙 por <a
+					class="underline hover:text-indigo-600"
+					href="https://about.luissilva.eu">mim</a
+				>
+			</p>
 		</div>
 	</div>
 </div>

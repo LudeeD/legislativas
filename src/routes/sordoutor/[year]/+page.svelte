@@ -69,7 +69,7 @@
 	<div
 		class="mx-auto flex max-w-2xl flex-col items-center justify-center rounded-2xl bg-white p-8 shadow-lg"
 	>
-		{#if finished}
+		{#if !finished}
 			<div class="mb-6 flex w-full items-center justify-between">
 				<div class="rounded-full bg-blue-100 px-4 py-2">
 					<span class="font-medium">Questão {step + 1}/{maxStep + 1}</span>
