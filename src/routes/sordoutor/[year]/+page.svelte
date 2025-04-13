@@ -69,7 +69,7 @@
 	<div
 		class="mx-auto flex max-w-2xl flex-col items-center justify-center rounded-2xl bg-white p-8 shadow-lg"
 	>
-		{#if !finished}
+		{#if finished}
 			<div class="mb-6 flex w-full items-center justify-between">
 				<div class="rounded-full bg-blue-100 px-4 py-2">
 					<span class="font-medium">Questão {step + 1}/{maxStep + 1}</span>
@@ -199,18 +199,20 @@
 					</p>
 				</div>
 
-				<a
-					href="/sordoutor"
-					class="inline-flex items-center rounded-lg bg-gray-200 px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-300"
-				>
-					← Voltar ao início
-				</a>
-				<button
-					class="w-full rounded-lg bg-indigo-600 px-6 py-3 text-lg font-semibold text-white shadow-md transition-all hover:bg-indigo-700"
-					onclick={restartGame}
-				>
-					Jogar Novamente
-				</button>
+				<div class="mb-4 flex flex-row justify-between gap-4">
+					<a
+						href="/sordoutor"
+						class="rounded-lg bg-indigo-600 px-3 py-3 text-white shadow-md transition-all hover:bg-indigo-700"
+					>
+						🏠 Voltar
+					</a>
+					<button
+						class="rounded-lg bg-indigo-600 px-3 py-3 text-white shadow-md transition-all hover:bg-indigo-700"
+						onclick={restartGame}
+					>
+						🔄 Jogar Novamente
+					</button>
+				</div>
 			</div>
 		{/if}
 	</div>
