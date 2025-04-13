@@ -12,13 +12,32 @@
 	let sordoutor = $derived(data.data[step]);
 	let selectedAnswer = $state('');
 	let explanationRef: HTMLElement | null = $state(null);
+	let currentImg = $state('');
+	let nextImg = $state('');
+	let isTransitioning = $state(false);
+
+	// Initialize the first image
+	$effect(() => {
+		currentImg = sordoutor.img;
+	});
 
 	function incrementStep() {
 		if (selectedAnswer === '') return;
 
 		if (step < maxStep) {
-			step += 1;
-			selectedAnswer = '';
+			// Prepare the next image for smooth transition
+			isTransitioning = true;
+			nextImg = data.data[step + 1].img;
+
+			// Preload the next image
+			const img = new Image();
+			img.onload = () => {
+				step += 1;
+				selectedAnswer = '';
+				currentImg = nextImg;
+				isTransitioning = false;
+			};
+			img.src = nextImg;
 		} else {
 			finished = true;
 			if (score > maxStep / 2) {
@@ -54,6 +73,7 @@
 		score = 0;
 		finished = false;
 		selectedAnswer = '';
+		currentImg = data.data[0].img;
 	}
 
 	let subtitle = $derived(() => {
@@ -86,12 +106,12 @@
 			<div
 				class="relative mb-8 w-full overflow-hidden rounded-xl shadow-md"
 				style="max-height: 400px;"
-				in:scale={{ duration: 400, start: 0.9, opacity: 0 }}
 			>
 				<img
-					class="h-full w-full object-cover object-center"
-					src={sordoutor.img}
+					class="h-full w-full object-cover object-center transition-opacity duration-500"
+					src={currentImg}
 					alt={sordoutor.name}
+					style={isTransitioning ? 'opacity: 0.7;' : 'opacity: 1;'}
 				/>
 			</div>
 
@@ -102,7 +122,7 @@
 					class:ring-green-500={selectedAnswer === 'doutor' && sordoutor.sordoutor}
 					class:ring-red-500={selectedAnswer === 'doutor' && !sordoutor.sordoutor}
 					onclick={() => checkAnswer(true)}
-					disabled={selectedAnswer !== ''}
+					disabled={selectedAnswer !== '' || isTransitioning}
 				>
 					{#if sordoutor.sexo === 'masculino'}
 						🤓 Sôr Doutor
@@ -116,7 +136,7 @@
 					class:ring-green-500={selectedAnswer === 'plebeu' && !sordoutor.sordoutor}
 					class:ring-red-500={selectedAnswer === 'plebeu' && sordoutor.sordoutor}
 					onclick={() => checkAnswer(false)}
-					disabled={selectedAnswer !== ''}
+					disabled={selectedAnswer !== '' || isTransitioning}
 				>
 					{#if sordoutor.sexo === 'masculino'}
 						😒 Plebeu
@@ -172,6 +192,7 @@
 						<button
 							class="rounded-lg bg-indigo-600 px-6 py-2 text-white shadow-md transition-all hover:bg-indigo-700"
 							onclick={incrementStep}
+							disabled={isTransitioning}
 						>
 							<span>Próxima Questão 🚀</span>
 						</button>
