@@ -13,7 +13,6 @@
 	let selectedAnswer = $state('');
 	let explanationRef: HTMLElement | null = $state(null);
 	let currentImg = $state('');
-	let nextImg = $state('');
 	let isTransitioning = $state(false);
 
 	// Initialize the first image
@@ -22,28 +21,27 @@
 	});
 
 	function incrementStep() {
-		if (selectedAnswer === '') return;
+		if (selectedAnswer === '' || isTransitioning) return;
 
-		if (step < maxStep) {
-			// Prepare the next image for smooth transition
-			isTransitioning = true;
-			nextImg = data.data[step + 1].img;
+		// Scroll to top before changing the question
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
 
-			// Preload the next image
-			const img = new Image();
-			img.onload = () => {
-				step += 1;
-				selectedAnswer = '';
-				currentImg = nextImg;
-				isTransitioning = false;
-			};
-			img.src = nextImg;
-		} else {
-			finished = true;
-			if (score > maxStep / 2) {
-				triggerConfetti();
+		// Reset selected answer
+		selectedAnswer = '';
+
+		// Add a small delay before changing questions to allow the scroll to happen
+		setTimeout(() => {
+			step += 1;
+			if (step >= maxStep) {
+				finished = true;
+				if (score > maxStep / 2) {
+					triggerConfetti();
+				}
 			}
-		}
+		}, 300);
 	}
 
 	function checkAnswer(isDoutor: boolean) {
@@ -55,7 +53,11 @@
 		// Scroll to explanation after a short delay
 		setTimeout(() => {
 			if (explanationRef) {
-				explanationRef.scrollIntoView({ behavior: 'smooth', block: 'center' });
+				explanationRef.scrollIntoView({
+					behavior: 'smooth',
+					block: 'center',
+					inline: 'nearest'
+				});
 			}
 		}, 100);
 	}
@@ -125,12 +127,15 @@
 				class="relative mb-8 w-full overflow-hidden rounded-xl shadow-md"
 				style="max-height: 400px;"
 			>
-				<img
-					class="h-full w-full object-cover object-center transition-opacity duration-500"
-					src={currentImg}
-					alt={sordoutor.name}
-					style={isTransitioning ? 'opacity: 0.7;' : 'opacity: 1;'}
-				/>
+				{#key step}
+					<img
+						in:fade={{ duration: 300 }}
+						out:fade={{ duration: 300 }}
+						class="h-full w-full object-cover object-center"
+						src={currentImg}
+						alt={sordoutor.name}
+					/>
+				{/key}
 			</div>
 
 			<div class="flex w-full flex-col items-center justify-center gap-4 sm:flex-row">
