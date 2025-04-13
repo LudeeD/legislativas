@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { fade, fly, scale } from 'svelte/transition';
+	import { fly, scale } from 'svelte/transition';
 
 	// Available game years
 	const availableYears = [2022, 2024, 2025];

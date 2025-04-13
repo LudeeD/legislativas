@@ -83,6 +83,24 @@
 			return `A ${sordoutor.name} é Sôr Doutora?`;
 		}
 	});
+
+	let copySuccess = $state(false);
+
+	function copyToClipboard() {
+		const shareText = `Acabei de jogar "Sôr Doutor?" edição ${data.year} e acertei ${score}/${maxStep + 1} questões! Achas que fazes melhor? https://legislativas.luissilva.eu/sordoutor`;
+
+		navigator.clipboard
+			.writeText(shareText)
+			.then(() => {
+				copySuccess = true;
+				setTimeout(() => {
+					copySuccess = false;
+				}, 2000);
+			})
+			.catch((err) => {
+				console.error('Failed to copy: ', err);
+			});
+	}
 </script>
 
 <div class="min-h-screen bg-gradient-to-b from-indigo-50 to-blue-100 p-4">
@@ -220,19 +238,33 @@
 					</p>
 				</div>
 
-				<div class="mb-4 flex flex-row justify-between gap-4">
-					<a
-						href="/sordoutor"
-						class="rounded-lg bg-indigo-600 px-3 py-3 text-white shadow-md transition-all hover:bg-indigo-700"
-					>
-						🏠 Voltar
-					</a>
+				<div class="mb-4 flex flex-col gap-4">
+					<!-- Share button -->
 					<button
-						class="rounded-lg bg-indigo-600 px-3 py-3 text-white shadow-md transition-all hover:bg-indigo-700"
-						onclick={restartGame}
+						onclick={copyToClipboard}
+						class="flex w-full items-center justify-center gap-2 rounded-lg bg-green-600 px-3 py-3 text-white shadow-md transition-all hover:bg-green-700"
 					>
-						🔄 Jogar Novamente
+						{#if copySuccess}
+							✓ Copiado para a área de transferência! Cola onde quiseres!
+						{:else}
+							📢 Partilhar Resultado
+						{/if}
 					</button>
+
+					<div class="flex flex-row justify-between gap-4">
+						<a
+							href="/sordoutor"
+							class="rounded-lg bg-indigo-600 px-3 py-3 text-white shadow-md transition-all hover:bg-indigo-700"
+						>
+							🏠 Voltar
+						</a>
+						<button
+							class="rounded-lg bg-indigo-600 px-3 py-3 text-white shadow-md transition-all hover:bg-indigo-700"
+							onclick={restartGame}
+						>
+							🔄 Jogar Novamente
+						</button>
+					</div>
 				</div>
 			</div>
 		{/if}

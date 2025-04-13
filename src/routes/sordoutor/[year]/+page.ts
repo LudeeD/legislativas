@@ -268,6 +268,7 @@ export const load: PageLoad = ({ params }) => {
 	};
 
 	return {
+		year,
 		data: shuffleArray([...data[year]])
 	};
 };
