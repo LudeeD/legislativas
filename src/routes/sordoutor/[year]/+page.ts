@@ -115,7 +115,7 @@ export const load: PageLoad = ({ params }) => {
 				name: 'Mariana Mortágua',
 				wikipedia: 'https://pt.wikipedia.org/wiki/Mariana_Mort%C3%A1gua',
 				summary:
-					'É licenciada e mestre em Economia, pelo ISCTE - Instituto Universitário de Lisboa, tendo terminado o doutoramento em Economia na School of Oriental and African Studies (SOAS) da Universidade de Londres.',
+					'É licenciada e mestre em Economia, pelo ISCTE - Instituto Universitário de Lisboa, tendo terminado o <u>doutoramento em Economia na School of Oriental and African Studies (SOAS) da Universidade de Londres.</u>',
 				sordoutor: true,
 				img: '/images/mariana.png'
 			},
@@ -124,7 +124,16 @@ export const load: PageLoad = ({ params }) => {
 				name: 'Pedro Nuno Santos',
 				wikipedia: 'https://pt.wikipedia.org/wiki/Pedro_Nuno_Santos',
 				summary:
-					'do Instituto Superior de Economia e Gestão da Universidade Técnica de Lisboa e Membro da Direção da Associação de Estudantes do mesmo, onde se licenciou em Economia.',
+					'do Instituto Superior de Economia e Gestão da Universidade Técnica de Lisboa e Membro da Direção da Associação de Estudantes do mesmo,<u>onde se licenciou em Economia.</u>',
+				sordoutor: false,
+				img: '/images/pedro.png'
+			},
+			{
+				sexo: 'feminino',
+				name: 'Pedro Nuno Santos',
+				wikipedia: 'https://pt.wikipedia.org/wiki/Pedro_Nuno_Santos',
+				summary:
+					'do Instituto Superior de Economia e Gestão da Universidade Técnica de Lisboa e Membro da Direção da Associação de Estudantes do mesmo,<u>onde se licenciou em Economia.</u>',
 				sordoutor: false,
 				img: '/images/pedro.png'
 			},
@@ -142,7 +151,7 @@ export const load: PageLoad = ({ params }) => {
 				name: 'Paulo Raimundo',
 				wikipedia: 'https://pt.wikipedia.org/wiki/Paulo_Raimundo',
 				summary:
-					'Concluirá o 12º ano em regime de trabalhador-estudante a estudar à noite, na Escola Secundária D. Manuel Martins, também em Setúbal',
+					'<u>Concluirá o 12º ano em regime de trabalhador-estudante a estudar à noite</u>, na Escola Secundária D. Manuel Martins, também em Setúbal',
 				sordoutor: false,
 				img: '/images/camarada2.png'
 			},
@@ -151,7 +160,7 @@ export const load: PageLoad = ({ params }) => {
 				name: 'Rui Rocha',
 				wikipedia: 'https://en.wikipedia.org/wiki/Rui_Rocha',
 				summary:
-					'Residente em Braga desde 1978, com interrupção apenas para a licenciatura, é casado, com 2 filhos, e licenciado em Direito pela Universidade Católica Portuguesa.',
+					'Residente em Braga desde 1978, com interrupção apenas para a licenciatura, é casado, com 2 filhos, e <u>licenciado em Direito pela Universidade Católica Portuguesa.</u>',
 				sordoutor: false,
 				img: '/images/rocha.png'
 			},
@@ -160,7 +169,7 @@ export const load: PageLoad = ({ params }) => {
 				name: 'Luís Montenegro',
 				wikipedia: 'https://pt.wikipedia.org/wiki/Lu%C3%ADs_Montenegro',
 				summary:
-					'Luís Montenegro viria igualmente a prosseguir estudos em Direito, licenciando-se na Universidade Católica Portuguesa (Centro Regional do Porto), em 1996. Anos mais tarde, voltaria a mesma universidade para realizar um curso pós-graduado em Direito da Proteção de Dados Pessoais.',
+					'Luís Montenegro viria igualmente a prosseguir estudos em Direito, <u>licenciando-se na Universidade Católica Portuguesa (Centro Regional do Porto)</u>, em 1996. Anos mais tarde, voltaria a mesma universidade para realizar um curso pós-graduado em Direito da Proteção de Dados Pessoais.',
 				sordoutor: false,
 				img: '/images/montenegro.png'
 			},
@@ -190,7 +199,7 @@ export const load: PageLoad = ({ params }) => {
 				name: 'Mariana Mortágua',
 				wikipedia: 'https://pt.wikipedia.org/wiki/Mariana_Mort%C3%A1gua',
 				summary:
-					'É licenciada e mestre em Economia, pelo ISCTE - Instituto Universitário de Lisboa, tendo terminado o doutoramento em Economia na School of Oriental and African Studies (SOAS) da Universidade de Londres.',
+					'É licenciada e mestre em Economia, pelo ISCTE - Instituto Universitário de Lisboa, tendo terminado o <u>doutoramento em Economia na School of Oriental and African Studies (SOAS) da Universidade de Londres.</u>',
 				sordoutor: true,
 				img: '/images/mariana.png'
 			},
@@ -199,7 +208,16 @@ export const load: PageLoad = ({ params }) => {
 				name: 'Pedro Nuno Santos',
 				wikipedia: 'https://pt.wikipedia.org/wiki/Pedro_Nuno_Santos',
 				summary:
-					'do Instituto Superior de Economia e Gestão da Universidade Técnica de Lisboa e Membro da Direção da Associação de Estudantes do mesmo, onde se licenciou em Economia.',
+					'do Instituto Superior de Economia e Gestão da Universidade Técnica de Lisboa e Membro da Direção da Associação de Estudantes do mesmo,<u>onde se licenciou em Economia.</u>',
+				sordoutor: false,
+				img: '/images/pedro.png'
+			},
+			{
+				sexo: 'feminino',
+				name: 'Pedro Nuno Santos',
+				wikipedia: 'https://pt.wikipedia.org/wiki/Pedro_Nuno_Santos',
+				summary:
+					'do Instituto Superior de Economia e Gestão da Universidade Técnica de Lisboa e Membro da Direção da Associação de Estudantes do mesmo,<u>onde se licenciou em Economia.</u>',
 				sordoutor: false,
 				img: '/images/pedro.png'
 			},
@@ -217,7 +235,7 @@ export const load: PageLoad = ({ params }) => {
 				name: 'Paulo Raimundo',
 				wikipedia: 'https://pt.wikipedia.org/wiki/Paulo_Raimundo',
 				summary:
-					'Concluirá o 12º ano em regime de trabalhador-estudante a estudar à noite, na Escola Secundária D. Manuel Martins, também em Setúbal',
+					'<u>Concluirá o 12º ano em regime de trabalhador-estudante a estudar à noite</u>, na Escola Secundária D. Manuel Martins, também em Setúbal',
 				sordoutor: false,
 				img: '/images/camarada2.png'
 			},
@@ -226,7 +244,7 @@ export const load: PageLoad = ({ params }) => {
 				name: 'Rui Rocha',
 				wikipedia: 'https://en.wikipedia.org/wiki/Rui_Rocha',
 				summary:
-					'Residente em Braga desde 1978, com interrupção apenas para a licenciatura, é casado, com 2 filhos, e licenciado em Direito pela Universidade Católica Portuguesa.',
+					'Residente em Braga desde 1978, com interrupção apenas para a licenciatura, é casado, com 2 filhos, e <u>licenciado em Direito pela Universidade Católica Portuguesa.</u>',
 				sordoutor: false,
 				img: '/images/rocha.png'
 			},
@@ -235,7 +253,7 @@ export const load: PageLoad = ({ params }) => {
 				name: 'Luís Montenegro',
 				wikipedia: 'https://pt.wikipedia.org/wiki/Lu%C3%ADs_Montenegro',
 				summary:
-					'Luís Montenegro viria igualmente a prosseguir estudos em Direito, licenciando-se na Universidade Católica Portuguesa (Centro Regional do Porto), em 1996. Anos mais tarde, voltaria a mesma universidade para realizar um curso pós-graduado em Direito da Proteção de Dados Pessoais.',
+					'Luís Montenegro viria igualmente a prosseguir estudos em Direito, <u>licenciando-se na Universidade Católica Portuguesa (Centro Regional do Porto)</u>, em 1996. Anos mais tarde, voltaria a mesma universidade para realizar um curso pós-graduado em Direito da Proteção de Dados Pessoais.',
 				sordoutor: false,
 				img: '/images/montenegro.png'
 			},

@@ -12,16 +12,21 @@
 	let sordoutor = $derived(data.data[step]);
 	let selectedAnswer = $state('');
 	let explanationRef: HTMLElement | null = $state(null);
-	let currentImg = $state('');
 	let isTransitioning = $state(false);
 
-	// Initialize the first image
+	// Update image whenever step changes
 	$effect(() => {
-		currentImg = sordoutor.img;
+		if (data.data[step]) {
+			currentImg = data.data[step].img;
+		}
 	});
+
+	let currentImg = $state(data.data[0]?.img || '');
 
 	function incrementStep() {
 		if (selectedAnswer === '' || isTransitioning) return;
+
+		isTransitioning = true;
 
 		// Scroll to top before changing the question
 		window.scrollTo({
@@ -29,18 +34,21 @@
 			behavior: 'smooth'
 		});
 
-		// Reset selected answer
-		selectedAnswer = '';
-
 		// Add a small delay before changing questions to allow the scroll to happen
 		setTimeout(() => {
+			selectedAnswer = '';
 			step += 1;
-			if (step >= maxStep) {
+
+			if (step > maxStep) {
 				finished = true;
 				if (score > maxStep / 2) {
 					triggerConfetti();
 				}
 			}
+
+			setTimeout(() => {
+				isTransitioning = false;
+			}, 300);
 		}, 300);
 	}
 
@@ -75,7 +83,7 @@
 		score = 0;
 		finished = false;
 		selectedAnswer = '';
-		currentImg = data.data[0].img;
+		currentImg = data.data[0]?.img || '';
 	}
 
 	let subtitle = $derived(() => {
@@ -130,7 +138,6 @@
 				{#key step}
 					<img
 						in:fade={{ duration: 300 }}
-						out:fade={{ duration: 300 }}
 						class="h-full w-full object-cover object-center"
 						src={currentImg}
 						alt={sordoutor.name}
@@ -217,7 +224,11 @@
 							onclick={incrementStep}
 							disabled={isTransitioning}
 						>
-							<span>Próxima Questão 🚀</span>
+							{#if step < maxStep}
+								<span>Próxima Questão 🚀</span>
+							{:else}
+								<span>Ver Resultados 🏁</span>
+							{/if}
 						</button>
 					</div>
 				</div>
