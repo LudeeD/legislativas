@@ -199,6 +199,12 @@
 					</p>
 				</div>
 
+				<a
+					href="/sordoutor"
+					class="inline-flex items-center rounded-lg bg-gray-200 px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-300"
+				>
+					← Voltar ao início
+				</a>
 				<button
 					class="w-full rounded-lg bg-indigo-600 px-6 py-3 text-lg font-semibold text-white shadow-md transition-all hover:bg-indigo-700"
 					onclick={restartGame}

@@ -153,7 +153,7 @@ export const load: PageLoad = ({ params }) => {
 				summary:
 					'Residente em Braga desde 1978, com interrupção apenas para a licenciatura, é casado, com 2 filhos, e licenciado em Direito pela Universidade Católica Portuguesa.',
 				sordoutor: false,
-				img: '/images/rui.png'
+				img: '/images/rocha.png'
 			},
 			{
 				sexo: 'masculino',
@@ -162,7 +162,7 @@ export const load: PageLoad = ({ params }) => {
 				summary:
 					'Luís Montenegro viria igualmente a prosseguir estudos em Direito, licenciando-se na Universidade Católica Portuguesa (Centro Regional do Porto), em 1996. Anos mais tarde, voltaria a mesma universidade para realizar um curso pós-graduado em Direito da Proteção de Dados Pessoais.',
 				sordoutor: false,
-				img: '/images/rio.png'
+				img: '/images/montenegro.png'
 			},
 			{
 				sexo: 'masculino',
@@ -228,7 +228,7 @@ export const load: PageLoad = ({ params }) => {
 				summary:
 					'Residente em Braga desde 1978, com interrupção apenas para a licenciatura, é casado, com 2 filhos, e licenciado em Direito pela Universidade Católica Portuguesa.',
 				sordoutor: false,
-				img: '/images/rui.png'
+				img: '/images/rocha.png'
 			},
 			{
 				sexo: 'masculino',
@@ -237,7 +237,7 @@ export const load: PageLoad = ({ params }) => {
 				summary:
 					'Luís Montenegro viria igualmente a prosseguir estudos em Direito, licenciando-se na Universidade Católica Portuguesa (Centro Regional do Porto), em 1996. Anos mais tarde, voltaria a mesma universidade para realizar um curso pós-graduado em Direito da Proteção de Dados Pessoais.',
 				sordoutor: false,
-				img: '/images/rio.png'
+				img: '/images/montenegro.png'
 			},
 			{
 				sexo: 'masculino',
