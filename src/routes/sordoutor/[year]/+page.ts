@@ -99,6 +99,156 @@ export const load: PageLoad = ({ params }) => {
 				sordoutor: false,
 				img: '/images/xicao.png'
 			}
+		],
+		2024: [
+			{
+				sexo: 'masculino',
+				name: 'Rui Tavares',
+				wikipedia: 'https://pt.wikipedia.org/wiki/Rui_Tavares#Biografia',
+				summary:
+					'Licenciou-se em História, variante de História da Arte, pela Universidade Nova de Lisboa, e <u >doutorou-se em História, pela École des Hautes Études en Sciences Sociales de Paris</u >. É especialista em história e cultura do século XVIII.',
+				sordoutor: true,
+				img: '/images/rui.png'
+			},
+			{
+				sexo: 'feminino',
+				name: 'Mariana Mortágua',
+				wikipedia: 'https://pt.wikipedia.org/wiki/Mariana_Mort%C3%A1gua',
+				summary:
+					'É licenciada e mestre em Economia, pelo ISCTE - Instituto Universitário de Lisboa, tendo terminado o doutoramento em Economia na School of Oriental and African Studies (SOAS) da Universidade de Londres.',
+				sordoutor: true,
+				img: '/images/mariana.png'
+			},
+			{
+				sexo: 'masculino',
+				name: 'Pedro Nuno Santos',
+				wikipedia: 'https://pt.wikipedia.org/wiki/Pedro_Nuno_Santos',
+				summary:
+					'do Instituto Superior de Economia e Gestão da Universidade Técnica de Lisboa e Membro da Direção da Associação de Estudantes do mesmo, onde se licenciou em Economia.',
+				sordoutor: false,
+				img: '/images/pedro.png'
+			},
+			{
+				sexo: 'feminino',
+				name: 'Inês Sousa Real',
+				wikipedia: 'https://pt.wikipedia.org/wiki/In%C3%AAs_Sousa_Real#Biografia',
+				summary:
+					'Licenciada em Direito pela Universidade Autónoma de Lisboa, reúne <u>pós-graduações em Ciências Jurídico-políticas e Contencioso Administrativo</u>. Mestre em Direito Animal e Sociedade, pela Universidade Autónoma de Barcelona (...) Em 2018 integrou o corpo docente do Mestrado em Direito Animal e Sociedade da Universidade Autónoma de Barcelona.',
+				sordoutor: false,
+				img: '/images/ines.png'
+			},
+			{
+				sexo: 'masculino',
+				name: 'Paulo Raimundo',
+				wikipedia: 'https://pt.wikipedia.org/wiki/Paulo_Raimundo',
+				summary:
+					'Concluirá o 12º ano em regime de trabalhador-estudante a estudar à noite, na Escola Secundária D. Manuel Martins, também em Setúbal',
+				sordoutor: false,
+				img: '/images/camarada2.png'
+			},
+			{
+				sexo: 'masculino',
+				name: 'Rui Rocha',
+				wikipedia: 'https://en.wikipedia.org/wiki/Rui_Rocha',
+				summary:
+					'Residente em Braga desde 1978, com interrupção apenas para a licenciatura, é casado, com 2 filhos, e licenciado em Direito pela Universidade Católica Portuguesa.',
+				sordoutor: false,
+				img: '/images/rui.png'
+			},
+			{
+				sexo: 'masculino',
+				name: 'Luís Montenegro',
+				wikipedia: 'https://pt.wikipedia.org/wiki/Lu%C3%ADs_Montenegro',
+				summary:
+					'Luís Montenegro viria igualmente a prosseguir estudos em Direito, licenciando-se na Universidade Católica Portuguesa (Centro Regional do Porto), em 1996. Anos mais tarde, voltaria a mesma universidade para realizar um curso pós-graduado em Direito da Proteção de Dados Pessoais.',
+				sordoutor: false,
+				img: '/images/rio.png'
+			},
+			{
+				sexo: 'masculino',
+				name: 'André Ventura',
+				wikipedia:
+					'https://pt.wikipedia.org/wiki/Andr%C3%A9_Ventura#Educa%C3%A7%C3%A3o_e_Juventude',
+				summary:
+					'Licenciou-se em Direito pela Faculdade de Direito da Universidade Nova de Lisboa (...) Em 2013, <u>defendeu a tese de doutoramento em Direito Público pela Faculdade de Direito da Universidade de Cork</u>, na Irlanda (...) Nesta, criticou o "populismo penal" e "estigmatização de minorias", revelando preocupação com a "expansão dos poderes policiais".',
+				sordoutor: true,
+				img: '/images/ventura.png'
+			}
+		],
+		2024: [
+			{
+				sexo: 'masculino',
+				name: 'Rui Tavares',
+				wikipedia: 'https://pt.wikipedia.org/wiki/Rui_Tavares#Biografia',
+				summary:
+					'Licenciou-se em História, variante de História da Arte, pela Universidade Nova de Lisboa, e <u >doutorou-se em História, pela École des Hautes Études en Sciences Sociales de Paris</u >. É especialista em história e cultura do século XVIII.',
+				sordoutor: true,
+				img: '/images/rui.png'
+			},
+			{
+				sexo: 'feminino',
+				name: 'Mariana Mortágua',
+				wikipedia: 'https://pt.wikipedia.org/wiki/Mariana_Mort%C3%A1gua',
+				summary:
+					'É licenciada e mestre em Economia, pelo ISCTE - Instituto Universitário de Lisboa, tendo terminado o doutoramento em Economia na School of Oriental and African Studies (SOAS) da Universidade de Londres.',
+				sordoutor: true,
+				img: '/images/mariana.png'
+			},
+			{
+				sexo: 'masculino',
+				name: 'Pedro Nuno Santos',
+				wikipedia: 'https://pt.wikipedia.org/wiki/Pedro_Nuno_Santos',
+				summary:
+					'do Instituto Superior de Economia e Gestão da Universidade Técnica de Lisboa e Membro da Direção da Associação de Estudantes do mesmo, onde se licenciou em Economia.',
+				sordoutor: false,
+				img: '/images/pedro.png'
+			},
+			{
+				sexo: 'feminino',
+				name: 'Inês Sousa Real',
+				wikipedia: 'https://pt.wikipedia.org/wiki/In%C3%AAs_Sousa_Real#Biografia',
+				summary:
+					'Licenciada em Direito pela Universidade Autónoma de Lisboa, reúne <u>pós-graduações em Ciências Jurídico-políticas e Contencioso Administrativo</u>. Mestre em Direito Animal e Sociedade, pela Universidade Autónoma de Barcelona (...) Em 2018 integrou o corpo docente do Mestrado em Direito Animal e Sociedade da Universidade Autónoma de Barcelona.',
+				sordoutor: false,
+				img: '/images/ines.png'
+			},
+			{
+				sexo: 'masculino',
+				name: 'Paulo Raimundo',
+				wikipedia: 'https://pt.wikipedia.org/wiki/Paulo_Raimundo',
+				summary:
+					'Concluirá o 12º ano em regime de trabalhador-estudante a estudar à noite, na Escola Secundária D. Manuel Martins, também em Setúbal',
+				sordoutor: false,
+				img: '/images/camarada2.png'
+			},
+			{
+				sexo: 'masculino',
+				name: 'Rui Rocha',
+				wikipedia: 'https://en.wikipedia.org/wiki/Rui_Rocha',
+				summary:
+					'Residente em Braga desde 1978, com interrupção apenas para a licenciatura, é casado, com 2 filhos, e licenciado em Direito pela Universidade Católica Portuguesa.',
+				sordoutor: false,
+				img: '/images/rui.png'
+			},
+			{
+				sexo: 'masculino',
+				name: 'Luís Montenegro',
+				wikipedia: 'https://pt.wikipedia.org/wiki/Lu%C3%ADs_Montenegro',
+				summary:
+					'Luís Montenegro viria igualmente a prosseguir estudos em Direito, licenciando-se na Universidade Católica Portuguesa (Centro Regional do Porto), em 1996. Anos mais tarde, voltaria a mesma universidade para realizar um curso pós-graduado em Direito da Proteção de Dados Pessoais.',
+				sordoutor: false,
+				img: '/images/rio.png'
+			},
+			{
+				sexo: 'masculino',
+				name: 'André Ventura',
+				wikipedia:
+					'https://pt.wikipedia.org/wiki/Andr%C3%A9_Ventura#Educa%C3%A7%C3%A3o_e_Juventude',
+				summary:
+					'Licenciou-se em Direito pela Faculdade de Direito da Universidade Nova de Lisboa (...) Em 2013, <u>defendeu a tese de doutoramento em Direito Público pela Faculdade de Direito da Universidade de Cork</u>, na Irlanda (...) Nesta, criticou o "populismo penal" e "estigmatização de minorias", revelando preocupação com a "expansão dos poderes policiais".',
+				sordoutor: true,
+				img: '/images/ventura.png'
+			}
 		]
 	};
 
